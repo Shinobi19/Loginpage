@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Sign in - Worf</title>
+    <link href="/s/semantic.min.css" rel="stylesheet"/>
+    <style type="text/css">
+    body {
+      background-color: #DADADA;
+    }
+    body > .grid {
+      height: 100%;
+    }
+    .image {
+      margin-top: -100px;
+    }
+    .column {
+      max-width: 450px;
+    }
+  </style>
+  <script type="text/javascript" src="/s/jquery-1.11.3.min.js"></script>
+  <script type="text/javascript" src="/s/semantic.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      $('#loginForm')
+          .form({
+            on: 'blur',
+            fields: {
+              username: {
+                identifier: 'username',
+                rules: [
+                  {
+                    type: 'empty'
+                  }
+                ]
+              },
+              password: {
+                identifier: 'password',
+                rules: [
+                  {
+                    type: 'empty'
+                  }
+                ]
+              }
+            }
+          });
+    });
+  </script>
+</head>
+
+<body>
+<div class="ui middle aligned center aligned grid">
+  <div class="column">
+    <form id="loginForm" class="ui large form" method="POST" action="/login">
+      <div class="ui stacked segment">
+        
+        <div class="field">
+          <div class="ui left icon input">
+            <i class="user icon"></i>
+            <input name="username" type="text" placeholder="Username">
+          </div>
+        </div>
+        <div class="field">
+          <div class="ui left icon input">
+            <i class="lock icon"></i>
+            <input name="password" type="password" placeholder="Password">
+          </div>
+        </div>
+        <button class="ui button" type="submit">Sign in</button>
+        <div class="ui error message"></div>
+    </form>
+  </div>
+  </div>
+</div> 
+</body>
+</html>
